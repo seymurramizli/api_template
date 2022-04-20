@@ -1,0 +1,13 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Network" ],
+    "MinimumLevel": "Debug",
+    "WriteTo": [
+      {
+        "Name": "TCPSink",
+        "Args": { "uri": "tls://your-logstash-host:your-ssl-port" }
+      }
+    ],
+    "Enrich": [ "FromLogContext" ]
+  }
+}
