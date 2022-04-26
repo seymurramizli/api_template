@@ -6,29 +6,29 @@ namespace Common.Middleware;
 public class RequestMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly IAppLogger<RequestMiddleware> _logger;
+    //private readonly IAppLogger<RequestMiddleware> _logger;
     private readonly RecyclableMemoryStreamManager _recyclableMemoryStreamManager;
 
-    public RequestMiddleware(RequestDelegate next, IAppLogger<RequestMiddleware> logger)
+    public RequestMiddleware(RequestDelegate next/*, IAppLogger<RequestMiddleware> logger*/)
     {
         _next = next;
-        _logger = logger;
+        //_logger = logger;
         _recyclableMemoryStreamManager = new RecyclableMemoryStreamManager();
     }
 
-    public async Task InvokeAsync(HttpContext httpContext)
+    public async Task InvokeAsync(HttpContext httpContext, IAppLogger<RequestMiddleware> logger)
     {
-        await LogRequestAsync(httpContext);
+        await LogRequestAsync(httpContext, logger);
 
         await _next(httpContext);
     }
 
-    private async Task LogRequestAsync(HttpContext context)
+    private async Task LogRequestAsync(HttpContext context, IAppLogger<RequestMiddleware> logger)
     {
         context.Request.EnableBuffering();
         await using var requestStream = _recyclableMemoryStreamManager.GetStream();
         await context.Request.Body.CopyToAsync(requestStream);
-        _logger.LogInformation($"Schema:{context.Request.Scheme} " +
+        logger.LogInformation($"Schema:{context.Request.Scheme} " +
                                $"Host: {context.Request.Host} " +
                                $"Path: {context.Request.Path} " +
                                $"QueryString: {context.Request.QueryString} " +
