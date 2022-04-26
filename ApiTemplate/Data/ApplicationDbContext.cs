@@ -1,18 +1,14 @@
 ﻿using ApiTemplate.Entities;
+using Common.Contract;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using System.Reflection;
 
 namespace ApiTemplate.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : BaseContext
 {
-    public ApplicationDbContext()
-    {
-    }
-
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    public ApplicationDbContext(DbContextOptions<BaseContext> options) : base(options)
     {
     }
 
