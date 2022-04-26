@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "1b1I/Pbmg245O5Od8AOtHg2BOuaCtp6JNXr1v77wK3Y=",
+  "Hash": "wI9pS7Qp+gcbxZvA6JditcWNsjjECFj4rew0E5ppMt8=",
   "Source": "ApiTemplate",
   "BasePath": "_content/ApiTemplate",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj",
+      "Identity": "D:\\projects\\github\\api_template\\Common\\Common.csproj",
       "Version": 2,
       "Source": "Common",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

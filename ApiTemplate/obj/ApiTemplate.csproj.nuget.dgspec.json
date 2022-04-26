@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Source\\Repos\\ApiTemplate\\ApiTemplate\\ApiTemplate.csproj": {}
+    "D:\\projects\\github\\api_template\\ApiTemplate\\ApiTemplate.csproj": {}
   },
   "projects": {
-    "D:\\Source\\Repos\\ApiTemplate\\ApiTemplate\\ApiTemplate.csproj": {
+    "D:\\projects\\github\\api_template\\ApiTemplate\\ApiTemplate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\Repos\\ApiTemplate\\ApiTemplate\\ApiTemplate.csproj",
+        "projectUniqueName": "D:\\projects\\github\\api_template\\ApiTemplate\\ApiTemplate.csproj",
         "projectName": "ApiTemplate",
-        "projectPath": "D:\\Source\\Repos\\ApiTemplate\\ApiTemplate\\ApiTemplate.csproj",
-        "packagesPath": "C:\\Users\\sramizli\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\Repos\\ApiTemplate\\ApiTemplate\\obj\\",
+        "projectPath": "D:\\projects\\github\\api_template\\ApiTemplate\\ApiTemplate.csproj",
+        "packagesPath": "C:\\Users\\babalir\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\github\\api_template\\ApiTemplate\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "D:\\D&S\\sramizli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\babalir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj": {
-                "projectPath": "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj"
+              "D:\\projects\\github\\api_template\\Common\\Common.csproj": {
+                "projectPath": "D:\\projects\\github\\api_template\\Common\\Common.csproj"
               }
             }
           }
@@ -46,6 +43,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -64,24 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22154.4\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj": {
+    "D:\\projects\\github\\api_template\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj",
+        "projectUniqueName": "D:\\projects\\github\\api_template\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\sramizli\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\Repos\\ApiTemplate\\Common\\obj\\",
+        "projectPath": "D:\\projects\\github\\api_template\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\babalir\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\github\\api_template\\Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "D:\\D&S\\sramizli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\babalir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,7 +168,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22154.4\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

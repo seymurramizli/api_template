@@ -7418,23 +7418,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sramizli\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\babalir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj",
+      "projectUniqueName": "D:\\projects\\github\\api_template\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "D:\\Source\\Repos\\ApiTemplate\\Common\\Common.csproj",
-      "packagesPath": "C:\\Users\\sramizli\\.nuget\\packages\\",
-      "outputPath": "D:\\Source\\Repos\\ApiTemplate\\Common\\obj\\",
+      "projectPath": "D:\\projects\\github\\api_template\\Common\\Common.csproj",
+      "packagesPath": "C:\\Users\\babalir\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\github\\api_template\\Common\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "D:\\D&S\\sramizli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\babalir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7521,7 +7517,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22154.4\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
