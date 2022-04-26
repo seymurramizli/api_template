@@ -1,15 +1,16 @@
 ﻿using ApiTemplate.Entities;
 using Common.Contract;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
 using System.Reflection;
 
 namespace ApiTemplate.Data;
 
 public class ApplicationDbContext : BaseContext
 {
-    public ApplicationDbContext(DbContextOptions<BaseContext> options) : base(options)
+    public ApplicationDbContext(DbContextOptions<BaseContext> options, ILogger<BaseContext> logger)
+        : base(options, logger)
     {
+        
     }
 
     public DbSet<Employee> Employees => Set<Employee>();
@@ -20,5 +21,10 @@ public class ApplicationDbContext : BaseContext
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+    {
+        return await base.SaveChangesAsync(cancellationToken);
     }
 }
