@@ -5,7 +5,7 @@ using Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTemplate.Controllers
-{
+{ 
     public class DepartmentController : BaseController<DepartmentController>
     {
 
