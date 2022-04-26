@@ -28,7 +28,7 @@ namespace ApiTemplate.Services
             await _dbContext.Departments.AddAsync(departmentEntity);
             await _dbContext.SaveChangesAsync();
 
-            return new ApiResponse(request.CorrelationId());
+            return new ApiResponse();
         }
     }
 }

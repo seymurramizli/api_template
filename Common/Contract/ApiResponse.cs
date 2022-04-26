@@ -7,7 +7,7 @@ namespace Contract;
 /// </summary>
 public class ApiResponse<T> : ApiResponse
 {
-    public T Data { get; set; }
+    public T? Data { get; set; }
 }
 
 public class ApiResponse : BaseMessage
@@ -19,12 +19,6 @@ public class ApiResponse : BaseMessage
     public DateTime TimeStamp { get; set; } = DateTime.Now;
 
 
-    public ApiResponse(Guid correlationId) : base()
-    {
-        _correlationId = correlationId;
-        Code = ResponseCode.Success;
-        Message = "Success";
-    }
     public ApiResponse() : base()
     {
         Code = ResponseCode.Success;

@@ -3,6 +3,7 @@ D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\loggerconfig.json
 D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\loggerconfig.Staging.json
 D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\appsettings.Development.json
 D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\appsettings.json
+D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\appsettings.Staging.json
 D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\ApiTemplate.exe
 D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\ApiTemplate.deps.json
 D:\Source\Repos\ApiTemplate\ApiTemplate\bin\Debug\net6.0\ApiTemplate.runtimeconfig.json
