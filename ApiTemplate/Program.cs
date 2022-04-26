@@ -1,6 +1,9 @@
+using ApiTemplate;
 using ApiTemplate.Data;
 using Common;
+using Common.Filters;
 using Common.Middleware;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -13,8 +16,19 @@ builder.Services.AddDbContext<DbContext, ApplicationDbContext>(options =>
 // Add services to the container.
 builder.Services.AddCommon(builder.Configuration);
 
+builder.Services.InjectDependencies(builder.Configuration);
+
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add(typeof(ValidatorActionFilter));
+}).AddFluentValidation(fvc =>
+{
+    fvc.RegisterValidatorsFromAssemblyContaining<Program>();
+    fvc.DisableDataAnnotationsValidation = true;
+}); ;
+
 builder.Host.UseSerilog((hostingContext, services, loggerConfiguration) => loggerConfiguration
                     .ReadFrom.Configuration(hostingContext.Configuration)
                     .Enrich.FromLogContext());
@@ -32,7 +46,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
-app.UseMiddleware<RequestMiddleware>();
+//app.UseMiddleware<RequestMiddleware>();
 
 app.UseAuthorization();
 

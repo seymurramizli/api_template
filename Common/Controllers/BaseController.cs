@@ -1,5 +1,4 @@
 ﻿using Common.Logging;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Common.Controllers
