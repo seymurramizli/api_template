@@ -2,7 +2,7 @@
 using Common.Extentions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Common.Contract
+namespace Common.Base
 {
     public class BaseContext : DbContext
     {
@@ -35,7 +35,7 @@ namespace Common.Contract
                 {
                     var originalValue = change.OriginalValues[prop.Name];
                     var currentValue = change.CurrentValues[prop.Name];
-                    if (!object.Equals(currentValue, originalValue))
+                    if (!Equals(currentValue, originalValue))
                     {
                         changes.Add(new(prop.Name, originalValue, currentValue));
                     }

@@ -1,6 +1,6 @@
 using ApiTemplate.DTOs;
 using ApiTemplate.Services.Interfaces;
-using Common.Controllers;
+using Common.Base;
 using Contract;
 using Microsoft.AspNetCore.Mvc;
 

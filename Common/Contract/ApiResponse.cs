@@ -8,6 +8,11 @@ namespace Contract;
 public class ApiResponse<T> : ApiResponse
 {
     public T? Data { get; set; }
+
+    public ApiResponse(T data) : base()
+    {
+        Data = data;
+    }
 }
 
 public class ApiResponse : BaseMessage

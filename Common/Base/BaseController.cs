@@ -1,7 +1,7 @@
 ﻿using Common.Logging;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Common.Controllers
+namespace Common.Base
 {
     [Route("api/v1/[controller]")]
     [ApiController]

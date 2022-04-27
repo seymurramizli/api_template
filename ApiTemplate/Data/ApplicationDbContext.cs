@@ -1,5 +1,5 @@
 ﻿using ApiTemplate.Entities;
-using Common.Contract;
+using Common.Base;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
