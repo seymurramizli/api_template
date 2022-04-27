@@ -7,11 +7,6 @@ namespace Common.Controllers
     [ApiController]
     public class BaseController<T> : ControllerBase
     {
-        private readonly IAppLogger<T> _logger;
 
-        public BaseController(IAppLogger<T> logger)
-        {
-            _logger = logger;
-        }
     }
 }

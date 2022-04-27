@@ -1,5 +1,4 @@
-﻿using Common.Contract;
-using Common.Converters;
+﻿using Common.Converters;
 using Common.Logging;
 using System.Text.Json;
 
@@ -16,7 +15,7 @@ public static class Startup
                 options.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
                 options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
             });
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
 

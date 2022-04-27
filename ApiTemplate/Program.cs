@@ -32,7 +32,7 @@ builder.Services.AddControllers(opt =>
 {
     fvc.RegisterValidatorsFromAssemblyContaining<Program>();
     fvc.DisableDataAnnotationsValidation = true;
-}); ;
+});
 
 builder.Host.UseSerilog((hostingContext, services, loggerConfiguration) => loggerConfiguration
                     .ReadFrom.Configuration(hostingContext.Configuration)
