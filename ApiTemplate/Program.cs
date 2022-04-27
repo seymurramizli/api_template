@@ -1,11 +1,13 @@
 using ApiTemplate;
 using ApiTemplate.Data;
+using ApiTemplate.Entities;
 using Common;
 using Common.Filters;
 using Common.Middleware;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Serilog.Sanitizer.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,11 +29,15 @@ builder.Services.AddControllers(opt =>
 {
     fvc.RegisterValidatorsFromAssemblyContaining<Program>();
     fvc.DisableDataAnnotationsValidation = true;
-}); ;
+});
+
 
 builder.Host.UseSerilog((hostingContext, services, loggerConfiguration) => loggerConfiguration
+                    .Sanitize().Structured().ByRemoving<Department>(x => x.Name)
+                    .Continue()
                     .ReadFrom.Configuration(hostingContext.Configuration)
                     .Enrich.FromLogContext());
+
 builder.WebHost.UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseIIS();
@@ -46,7 +52,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
-//app.UseMiddleware<RequestMiddleware>();
+app.UseMiddleware<RequestMiddleware>();
 
 app.UseAuthorization();
 
