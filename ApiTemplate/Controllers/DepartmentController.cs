@@ -1,12 +1,11 @@
 using ApiTemplate.DTOs;
 using ApiTemplate.Services.Interfaces;
-using Common.Base;
 using Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTemplate.Controllers
 {
-    public class DepartmentController : ControllerBase
+    public class DepartmentController : ControllerBase //BaseController<DepartmentController>
     {
 
         private readonly IDepartmentService _departmentService;

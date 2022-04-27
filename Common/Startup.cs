@@ -1,4 +1,5 @@
 ﻿using Common.Converters;
+using Common.Filters;
 using Common.Logging;
 using System.Text.Json;
 
@@ -9,13 +10,16 @@ public static class Startup
     public static IServiceCollection AddCommon(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddAutoMapper(typeof(Startup));
-        services.AddControllers()
+        services.AddControllers(opt =>
+        {
+            opt.Filters.Add(typeof(ValidatorActionFilter));
+        })
             .AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
                 options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
             });
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
 

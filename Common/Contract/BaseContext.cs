@@ -2,14 +2,14 @@
 using Common.Extentions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Common.Base
+namespace Common.Contract
 {
-    public class BaseDbContext : DbContext
+    public class BaseContext : DbContext
     {
         private readonly ILogger _logger;
 
-        public BaseDbContext(DbContextOptions<BaseDbContext> options,
-            ILogger<BaseDbContext> logger) : base(options)
+        public BaseContext(DbContextOptions<BaseContext> options,
+            ILogger<BaseContext> logger) : base(options)
         {
             _logger = logger;
         }
@@ -35,7 +35,7 @@ namespace Common.Base
                 {
                     var originalValue = change.OriginalValues[prop.Name];
                     var currentValue = change.CurrentValues[prop.Name];
-                    if (!Equals(currentValue, originalValue))
+                    if (!object.Equals(currentValue, originalValue))
                     {
                         changes.Add(new(prop.Name, originalValue, currentValue));
                     }
