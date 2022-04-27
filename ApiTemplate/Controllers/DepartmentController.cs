@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTemplate.Controllers
 {
-    public class DepartmentController : ControllerBase//BaseController<DepartmentController>
+    public class DepartmentController : ControllerBase //BaseController<DepartmentController>
     {
 
         private readonly IDepartmentService _departmentService;

@@ -25,10 +25,7 @@ builder.Services.InjectDependencies(builder.Configuration);
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
-builder.Services.AddControllers(opt =>
-{
-    opt.Filters.Add(typeof(ValidatorActionFilter));
-}).AddFluentValidation(fvc =>
+builder.Services.AddFluentValidation(fvc =>
 {
     fvc.RegisterValidatorsFromAssemblyContaining<Program>();
     fvc.DisableDataAnnotationsValidation = true;
