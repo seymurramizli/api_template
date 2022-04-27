@@ -1,6 +1,7 @@
 using ApiTemplate;
 using ApiTemplate.Data;
 using Common;
+using Common.Contract;
 using Common.Filters;
 using Common.Middleware;
 using FluentValidation.AspNetCore;
@@ -12,6 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DbContext, ApplicationDbContext>(options =>
                  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDbContext<DbContext, BaseDbContext>(options =>
+                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 // Add services to the container.
 builder.Services.AddCommon(builder.Configuration);

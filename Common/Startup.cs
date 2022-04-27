@@ -1,4 +1,5 @@
-﻿using Common.Converters;
+﻿using Common.Contract;
+using Common.Converters;
 using Common.Logging;
 using System.Text.Json;
 

@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Common.Contract
 {
-    public class BaseContext : DbContext
+    public class BaseDbContext : DbContext
     {
         private readonly ILogger _logger;
 
-        public BaseContext(DbContextOptions<BaseContext> options,
-            ILogger<BaseContext> logger) : base(options)
+        public BaseDbContext(DbContextOptions<BaseDbContext> options,
+            ILogger<BaseDbContext> logger) : base(options)
         {
             _logger = logger;
         }

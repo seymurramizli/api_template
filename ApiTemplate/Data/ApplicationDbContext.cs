@@ -5,13 +5,13 @@ using System.Reflection;
 
 namespace ApiTemplate.Data;
 
-public class ApplicationDbContext : BaseContext
+public class ApplicationDbContext : BaseDbContext
 {
-    public ApplicationDbContext(DbContextOptions<BaseContext> options, ILogger<BaseContext> logger)
+    public ApplicationDbContext(DbContextOptions<BaseDbContext> options, ILogger<BaseDbContext> logger)
         : base(options, logger)
     {
         
-    }
+    } 
 
     public DbSet<Employee> Employees => Set<Employee>();
     public DbSet<Department> Departments => Set<Department>();
