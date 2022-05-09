@@ -1,12 +1,21 @@
-﻿namespace ApiTemplate.Entities;
+﻿using System;
+using System.Collections.Generic;
 
-public class Department
+namespace ApiTemplate.Entities
 {
-    public int Id { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-    public int Status { get; set; }
-    public string? Name { get; set; }
+    public partial class Department
+    {
+        public Department()
+        {
+            Employees = new HashSet<Employee>();
+        }
 
-    public ICollection<Employee> Employees { get; set; }
+        public int Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public byte Status { get; set; }
+        public string Name { get; set; } = null!;
+
+        public virtual ICollection<Employee> Employees { get; set; }
+    }
 }

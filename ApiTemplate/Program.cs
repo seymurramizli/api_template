@@ -6,17 +6,14 @@ using Common.Filters;
 using Common.Middleware;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddDbContext<DbContext, ApplicationDbContext>(options =>
+builder.Services.AddDbContext<DbContext, DefaultContext>(options =>
                  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddDbContext<DbContext, BaseDbContext>(options =>
-                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 
 // Add services to the container.
 builder.Services.AddCommon(builder.Configuration);
@@ -41,7 +38,7 @@ builder.WebHost.UseContentRoot(Directory.GetCurrentDirectory())
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

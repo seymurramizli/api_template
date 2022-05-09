@@ -7,12 +7,13 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        ApplyMappingsFromAssembly(Assembly.GetExecutingAssembly());
+        ApplyMappingsFromAssembly();
     }
 
-    private void ApplyMappingsFromAssembly(Assembly assembly)
+    private void ApplyMappingsFromAssembly()
     {
-        var types = assembly.GetExportedTypes()
+        var exportedTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());   
+        var types = exportedTypes
             .Where(t => t.GetInterfaces().Any(i =>
                 i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
             .ToList();

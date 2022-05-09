@@ -38,8 +38,12 @@ namespace Common.Middleware
                     apiResponse.Code = ResponseCode.InternalServerError;
                     apiResponse.Message = error.Message;
                 }
-
-                var result = JsonSerializer.Serialize(apiResponse);
+                var excludeProperties = new[] { "correlationId", "applicationName" };
+                var result = JsonSerializer.Serialize(apiResponse, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+                });
                 await response.WriteAsync(result);
             }
         }

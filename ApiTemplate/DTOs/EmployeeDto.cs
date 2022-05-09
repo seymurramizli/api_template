@@ -1,10 +1,11 @@
 ﻿using ApiTemplate.Entities;
 using AutoMapper;
+using Common.Mappings;
 using Contract;
 
 namespace ApiTemplate.DTOs;
 
-public class EmployeeDto : BaseRequest
+public class EmployeeDto : BaseRequest, IMapFrom<EmployeeDto>
 {
     public string? Name { get; set; }
     public string? Surname { get; set; }
@@ -14,6 +15,6 @@ public class EmployeeDto : BaseRequest
 
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<EmployeeDto, Employee>();
+        profile.CreateMap<EmployeeDto, Employee>().ReverseMap();
     }
 }

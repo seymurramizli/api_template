@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32317.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{938EA1AB-CAB3-4286-AFFD-DBF5FE38363C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate", "ApiTemplate\ApiTemplate.csproj", "{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTemplate", "ApiTemplate\ApiTemplate.csproj", "{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ApiTemplate.DB", "ApiTemplate.DB\ApiTemplate.DB.sqlproj", "{150AC1A2-8742-470F-B072-643AFFEBD2D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150AC1A2-8742-470F-B072-643AFFEBD2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150AC1A2-8742-470F-B072-643AFFEBD2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150AC1A2-8742-470F-B072-643AFFEBD2D5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{150AC1A2-8742-470F-B072-643AFFEBD2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150AC1A2-8742-470F-B072-643AFFEBD2D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150AC1A2-8742-470F-B072-643AFFEBD2D5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

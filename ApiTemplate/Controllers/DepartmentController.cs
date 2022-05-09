@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTemplate.Controllers
 {
-    public class DepartmentController : ControllerBase //BaseController<DepartmentController>
+    [Route("api/v1/[controller]")]
+    [ApiController]
+    public class DepartmentController : ControllerBase
     {
 
         private readonly IDepartmentService _departmentService;
@@ -15,10 +17,22 @@ namespace ApiTemplate.Controllers
             _departmentService = departmentService;
         }
 
-        [HttpPost("department")]
+        [HttpPost]
         public async Task<ApiResponse> Save([FromBody] DepartmentDto request)
         {
             return await _departmentService.saveDepartment(request);
         }
+
+        [HttpPut]
+        public async Task<ApiResponse> Update([FromBody] DepartmentDto request)
+        {
+            return await _departmentService.updateDepartment(request);
+        }
+
+        [HttpGet]
+        public async Task<ApiResponse<List<DepartmentDto>>> GetAll()
+        {
+            return await _departmentService.getDepartments();
+        } 
     }
 }
