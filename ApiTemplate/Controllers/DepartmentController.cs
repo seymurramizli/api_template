@@ -1,13 +1,12 @@
 using ApiTemplate.DTOs;
 using ApiTemplate.Services.Interfaces;
+using Common.Base;
 using Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTemplate.Controllers
 {
-    [Route("api/v1/[controller]")]
-    [ApiController]
-    public class DepartmentController : ControllerBase
+    public class DepartmentController : BaseController<DepartmentController>
     {
 
         private readonly IDepartmentService _departmentService;
