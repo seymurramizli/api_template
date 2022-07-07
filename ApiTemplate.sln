@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32317.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{938EA1AB-CAB3-4286-AFFD-DBF5FE38363C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTemplate.Service", "ApiTemplate\ApiTemplate.Service.csproj", "{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTemplate.Service", "ApiTemplate.Service\ApiTemplate.Service.csproj", "{C3D909DA-3844-4FF0-B4FD-20DA674CDA38}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ApiTemplate.DB", "ApiTemplate.DB\ApiTemplate.DB.sqlproj", "{150AC1A2-8742-470F-B072-643AFFEBD2D5}"
 EndProject
