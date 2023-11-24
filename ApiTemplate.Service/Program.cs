@@ -28,6 +28,10 @@ builder.Services.AddFluentValidation(fvc =>
     fvc.DisableDataAnnotationsValidation = true;
 });
 
+builder.Services
+    .AddHealthChecks()
+    .AddDbContextCheck<DefaultContext>();
+
 builder.Host.UseSerilog((hostingContext, services, loggerConfiguration) => loggerConfiguration
                     .ReadFrom.Configuration(hostingContext.Configuration)
                     .Enrich.FromLogContext());
@@ -50,6 +54,8 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHealthChecks("health");
 
 app.UseSerilogRequestLogging(options =>
 {
